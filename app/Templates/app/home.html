@@ -24,81 +24,21 @@
   </div>
 {% endblock banner_slider %}
 {% block main-content %}
-<div class='row'>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/pokemon2.jpg' %}" />
+<div class='row' style="width:100%">
+    {%for product in products %}
+    <div class="col-lg-3">
+        <img class='thumbnail' src="{{product.ImageURL}}" />
         <div class='box-element product'>
-            <h6><strong>Mô hình pokemon khởi đầu Kanto</strong></h6>
+            <h6><strong>{{product.name}}</strong></h6>
             <hr>
 
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>500.000 VND</strong></h6>
+            <button class='btn btn-outline-secondary add-btn'>Add to cart</button>
+            <a class='btn btn-outline-success' href="#">View</a>
+            <h6 style="display: inline-block; float: right"><strong>${{product.price | floatformat:2}}</strong></h6>
 
         </div>    
-    </div>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/letgo.jpg' %}" />
-        <div class='box-element product'>
-            <h6><strong>Game Pokemon Let's go Pikachu</strong></h6>
-            <hr>
-
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>800.000 VND</strong></h6>
-
-        </div>    
-    </div>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/charizard.jpg' %}" />
-        <div class='box-element product'>
-            <h6><strong>Thẻ bài Charizard cực hiếm</strong></h6>
-            <hr>
-
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>999.000 VND</strong></h6>
-
-        </div>    
-    </div>       
-</div>
-<div class='row'>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/mohinh2.jpg' %}" />
-        <div class='box-element product'>
-            <h6><strong>Mô hình pokemon cực hiếm</strong></h6>
-            <hr>
-
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>700.000 VND</strong></h6>
-
-        </div>    
-    </div>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/scarlet.jpg' %}" />
-        <div class='box-element product'>
-            <h6><strong>Game Pokemon Scarlet</strong></h6>
-            <hr>
-
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>900.000 VND</strong></h6>
-
-        </div>    
-    </div>
-    <div class="col-lg-4">
-        <img class='thumbnail' src="{% static 'app/images/banner/thepokemon.jpg' %}" />
-        <div class='box-element product'>
-            <h6><strong>Thẻ bài pokemon các loại</strong></h6>
-            <hr>
-
-            <button class='btn btn-outline-secondary add-btn'>Thêm vào giỏ hàng</button>
-            <a class='btn btn-outline-success' href="#">Xem chi tiết</a>
-            <h6 style="display: inline-block; float: right"><strong>100.000 VND</strong></h6>
-
-        </div>    
-    </div>       
+    </div> 
+    {% endfor %}
 </div>
 </br>
 </br>
